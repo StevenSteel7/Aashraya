@@ -1,0 +1,71 @@
+/* Basic Navbar Styling */
+.navbar {
+  position: absolute;  /* Stay at the top of the viewport */
+  top: 0;
+  left: 0;
+  width: 100%;     /* Full width */
+  padding: 20px;   /* Adjust padding as needed */
+  z-index: 1000;   /* Ensure it's above other content */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+/* Initial Transparent State */
+.navbar.transparent {
+  background-color: transparent;
+}
+
+/* Scrolled State */
+.navbar:not(.transparent) {
+  background-color: rgba(0, 0, 0, 0); /* Semi-transparent white */
+  backdrop-filter: blur(2px); /* Add a blur effect */
+}
+
+/* Navigation Links */
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;    /* Arrange links horizontally */
+  justify-content: space-around; /* Evenly space links */
+}
+
+.navbar li {
+  margin: 0 15px; /* Add spacing between links */
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #333;     /* Dark text for transparent navbar */
+}
+
+.navbar:not(.transparent) a {
+  color: #007bff;  /* Blue text for solid background */
+}
+
+/* Hover Effect */
+.navbar a:hover {
+  color: #0056b3;
+}
+
+/* Active Link (optional) */
+.navbar a.active {
+  font-weight: bold;
+}
+
+/* Additional Styling (Optional) */
+.navbar-brand {    /* Logo or site name */
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Responsive Design (Example) */
+@media (max-width: 768px) {
+  .navbar ul {
+    flex-direction: column; /* Stack links vertically */
+    align-items: center;
+  }
+
+  .navbar li {
+    margin: 10px 0;       
+  }
+}
